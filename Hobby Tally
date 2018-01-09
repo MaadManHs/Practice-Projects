@@ -1,9 +1,13 @@
         Dim Tally(5) As Integer
         Dim Name As String() = {"", "Reading books ", "Play computer games ", "Sport ", "Programming ", "Watching TV "}
         Dim Choice As Integer
+        Dim File As System.IO.StreamReader
+        File = New System.IO.StreamReader("D:/text.TXT")
         For i = 1 To 5
-            Tally(i) = 0
+            Tally(i) = File.ReadLine
         Next
+        File.Close()
+        
         Do
             Console.WriteLine("Enter choice: ")
             Choice = Console.ReadLine
@@ -16,4 +20,10 @@
             Next
             Console.WriteLine("")
         Next
+        Dim FileHandler As IO.StreamWriter
+        FileHandler = New IO.StreamWriter("D:/text.TXT")
+        For i = 1 To 5
+            FileHandler.WriteLine(Tally(i))
+        Next
+        FileHandler.Close()
         Console.ReadLine()

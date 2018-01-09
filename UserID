@@ -1,0 +1,22 @@
+        Dim UserID As String
+        Dim ValidCh As Boolean = False
+        Dim ValidNum As Boolean = False
+        Dim A As Integer = 0
+        Dim B As Integer = 0
+        Console.WriteLine("Please input UserID: ")
+        UserID = Console.ReadLine()
+        For i = 0 To 2
+            If Asc(UserID(i)) > 64 And Asc(UserID(i)) < 91 Then
+                A = A + 1
+            End If
+        Next
+        For i = 3 To 6
+            If Asc(UserID(i)) > 47 And Asc(UserID(i)) < 58 Then
+                B += 1
+            End If
+        Next
+        If B = 4 And A = 3 Then
+            Console.WriteLine("UserID is valid")
+        Else Console.WriteLine("UserID is invalid")
+        End If
+        Console.ReadLine()

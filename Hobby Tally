@@ -1,0 +1,19 @@
+        Dim Tally(5) As Integer
+        Dim Name As String() = {"", "Reading books ", "Play computer games ", "Sport ", "Programming ", "Watching TV "}
+        Dim Choice As Integer
+        For i = 1 To 5
+            Tally(i) = 0
+        Next
+        Do
+            Console.WriteLine("Enter choice: ")
+            Choice = Console.ReadLine
+            Tally(Choice) += 1
+        Loop Until Choice = 0
+        For i = 1 To 5
+            Console.Write(Name(i))
+            For j = 1 To Tally(i)
+                Console.Write("\")
+            Next
+            Console.WriteLine("")
+        Next
+        Console.ReadLine()
